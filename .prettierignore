@@ -1,0 +1,8 @@
+build
+dist
+coverage
+docs
+node_modules
+*.md
+package.json
+package-lock.json

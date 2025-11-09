@@ -1,6 +1,11 @@
+# IDE
+.idea
+
 # compiled output
-/build
-.npmignore
+dist/
+docs/
+
+# coverage
 
 # Logs
 logs

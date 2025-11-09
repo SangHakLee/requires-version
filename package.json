@@ -3,21 +3,24 @@
   "version": "0.1.0",
   "type": "module",
   "description": "requires dependency version check",
-  "main": "build/index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": ["dist/"],
   "scripts": {
-    "start:dev": "npx nodemon",
-    "start": "npm run build && node build/index.js",
+    "build": "tsc",
     "test": "jest",
-    "coverage": "jest --collectCoverage --",
-    "prepack": "npmignore --auto",
-    "build": "rimraf ./build && tsc"
+    "test:watch": "jest --watch",
+    "coverage": "jest --coverage",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "typedoc": "typedoc",
+    "prepare": "husky || true",
+    "prepublishOnly": "npm run build && npm test"
   },
-  "keywords": [
-    "version"
-  ],
-  "author": "sanghaklee",
+  "keywords": ["version", "validator", "requires"],
+  "author": "sanghaklee, <code.ryan.lee@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/SangHakLee/requires-version/blob/main/README.md",
+  "homepage": "https://sanghaklee.github.io/subnet-overlap",
   "repository": {
     "type": "git",
     "url": "https://github.com/SangHakLee/requires-version"
@@ -31,25 +34,33 @@
       "url": "https://github.com/sponsors/SangHakLee"
     }
   ],
-  "publishConfig": {
-    "ignore": [
-      "!build/",
-      "src/",
-      "test/"
-    ]
+  "dependencies": {
+    "compare-versions": "^6.0.0-rc.1",
+    "which": "^3.0.0"
   },
   "devDependencies": {
-    "@types/jest": "^29.4.0",
-    "@types/node": "^18.14.0",
+    "@commitlint/cli": "^20.1.0",
+    "@commitlint/config-conventional": "^20.0.0",
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/commit-analyzer": "^12.0.0",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/github": "^10.0.0",
+    "@semantic-release/npm": "^12.0.1",
+    "@semantic-release/release-notes-generator": "^13.0.0",
+    "@types/jest": "^29.5.0",
+    "@types/node": "^20.0.0",
     "@types/which": "^2.0.2",
-    "compare-versions": "^6.0.0-rc.1",
+    "@typescript-eslint/eslint-plugin": "^8.0.0",
+    "@typescript-eslint/parser": "^8.0.0",
+    "eslint": "^9.39.1",
+    "husky": "^9.1.7",
     "jest": "^29.4.3",
-    "nodemon": "^2.0.20",
-    "npmignore": "^0.3.0",
-    "rimraf": "^4.1.2",
+    "lint-staged": "^15.0.0",
+    "prettier": "^3.0.0",
+    "semantic-release": "^25.0.1",
     "ts-jest": "^29.0.5",
     "ts-node": "^10.9.1",
-    "typescript": "^4.9.5",
-    "which": "^3.0.0"
+    "typedoc": "^0.26.0",
+    "typescript": "^5.3.3"
   }
 }

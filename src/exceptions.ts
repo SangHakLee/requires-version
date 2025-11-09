@@ -1,6 +1,6 @@
 export class VersionException extends Error {
-    constructor(message: string) {
-      super(message);
-      this.name = "VersionException";
-    }
+	constructor(message: string) {
+		super(message)
+		this.name = 'VersionException'
+	}
 }
