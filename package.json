@@ -1,11 +1,13 @@
 {
   "name": "requires-version",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "type": "module",
   "description": "requires dependency version check",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "files": ["dist/"],
+  "files": [
+    "dist/"
+  ],
   "scripts": {
     "build": "tsc",
     "test": "jest",
@@ -17,7 +19,11 @@
     "prepare": "husky || true",
     "prepublishOnly": "npm run build && npm test"
   },
-  "keywords": ["version", "validator", "requires"],
+  "keywords": [
+    "version",
+    "validator",
+    "requires"
+  ],
   "author": "sanghaklee, <code.ryan.lee@gmail.com>",
   "license": "MIT",
   "homepage": "https://sanghaklee.github.io/subnet-overlap",
