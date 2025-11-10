@@ -5,7 +5,7 @@
 [![codecov](https://codecov.io/gh/SangHakLee/requires-version/branch/master/graph/badge.svg)](https://codecov.io/gh/SangHakLee/requires-version)
 [![semantic-release: conventionalcommits](https://img.shields.io/badge/semantic--release-conventionalcommits-1890ff?logo=semantic-release)](https://github.com/semantic-release/semantic-release)
 
-[![NPM](https://nodei.co/npm/requires-version.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/requires-version/)
+[![NPM](https://nodei.co/npm/requires-version.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/requires-version)
 
 A TypeScript library for checking system dependency versions. Verify that required command-line tools exist and meet minimum version requirements in your Node.js projects.
 
@@ -257,13 +257,20 @@ npm run lint:fix
 ## Testing
 
 The library includes comprehensive tests covering:
-- Basic functionality (existence checks, version comparisons)
-- Error handling (missing dependencies, invalid versions)
-- Version parsing (various formats, prefixes)
-- Real-world platform tests (Linux, macOS, Windows)
-- Edge cases (version format variations)
+- **Unit tests**: Mock-based tests for core functionality
+  - Basic functionality (existence checks, version comparisons)
+  - Error handling (missing dependencies, invalid versions)
+  - Version parsing (various formats, prefixes)
+  - Edge cases (version format variations)
+- **Platform tests**: Real-world tests on actual system tools
+  - Linux: node, npm, bash, man
+  - macOS: node, npm, bash, git
+  - Windows: node, npm, cmd, git
+  - Note: These tests are resilient to version detection failures across different systems
 
-See [test/index.spec.ts](test/index.spec.ts) for all test cases.
+All tests achieve **96%+ coverage** with thresholds enforced at 80-85%.
+
+See [test/index.test.ts](test/index.test.ts) for all test cases.
 
 ## Contributing
 

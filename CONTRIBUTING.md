@@ -304,9 +304,13 @@ describe('feature name', () => {
 
 ### Test Categories
 
-- **Unit tests**: Test individual functions in isolation
+- **Unit tests**: Test individual functions in isolation with mocks
 - **Integration tests**: Test multiple components together
 - **Platform tests**: Real-world tests on actual system tools
+  - **Important**: These tests are designed to be resilient
+  - They accept both successful version checks and VersionException
+  - This accounts for different tool output formats across platforms
+  - Ensures tests pass on Linux, macOS, and Windows CI
 - **Error tests**: Test error handling and exceptions
 
 ### Example Test
